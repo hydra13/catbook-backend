@@ -1,5 +1,4 @@
 # CatBook - Backend
-------
 
 This is a simple social network for the HighLoad course.
 
@@ -11,3 +10,11 @@ git clone https://github.com/hydra13/catbook-backend.git
 cd catbook-backend
 npm start
 ```
+
+## API
+* **GET /cats** - get all records
+* **GET /cats/:id** - get cat by id
+* **POST /cats** - create new cat's record
+* **PUT /cats/:id** - change cat's record by id
+* **PATCH /cats/:id** - change cat's record by id (same PUT)
+* **DELETE /cats/:id** - delete cat's record by id
