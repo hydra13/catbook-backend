@@ -2,6 +2,7 @@ const path = require('path')
 const express = require('express');
 const favicon = require('serve-favicon');
 const morgan = require('morgan');
+const bodyParser = require('body-parser');
 const cats = require('./routes/cats');
 
 const app = express();
@@ -10,6 +11,8 @@ const port = process.env.PORT || 7713;
 app.use(morgan('combined'));
 
 app.use(favicon(path.resolve(__dirname, '..', 'public', 'favicon.ico')));
+
+app.use(bodyParser.json());
 
 app.use('/cats', cats);
 
