@@ -4,16 +4,15 @@ const Cat = require('../models/cats');
 
 const handleRequest = async (res, method, ...params) => {
     try {
-        console.log(method);
         const result = await Cat[method](...params);
         res.status(200)
             .type('application/json')
-            .send(`{ error: false, message: "", data: ${JSON.stringify(result)}}`)
+            .send(`{ "error": false, "message": "", "data": ${JSON.stringify(result)}}`)
             .end();
     } catch (err) {
         res.status(400)
             .type('application/json')
-            .send(`{ error: true, message: "${err.message}"}`)
+            .send(`{ "error": true, "message": "${err.message}"}`)
             .end();
     }
 }
@@ -35,6 +34,8 @@ router.post('/', async (req, res) => {
 
 // replace cat
 router.put('/:id', (req, res) => {
+    console.log('id: ' + req.params.id)
+    console.log('body: ' + JSON.stringify(req.body))
     handleRequest(res, 'update', req.params.id, req.body);
 });
 
