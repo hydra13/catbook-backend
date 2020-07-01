@@ -7,4 +7,3 @@ CatBook backend server started:
 http://localhost:${port}/ - main
 http://localhost:${port}/cats
 `));
-
