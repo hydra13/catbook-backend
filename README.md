@@ -1,4 +1,5 @@
-# CatBook - Backend
+# CatBook - Backend 
+[![Build Status](https://travis-ci.org/hydra13/catbook-backend.svg?branch=master)](https://travis-ci.org/hydra13/catbook-backend)
 
 This is a simple social network for the HighLoad course.
 
