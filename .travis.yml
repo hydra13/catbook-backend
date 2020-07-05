@@ -1,11 +1,17 @@
 os:
-  - linux
+- linux
 dist: trusty
 language: node_js
 node_js:
-  - 10
-  - 12
-  - 14
+- 10
+- 12
+- 14
 script:
-  - npm run lint
-  - npm test
+- npm run lint
+- npm test
+deploy:
+  provider: heroku
+  api_key:
+    secure: oBgTlNojClg2W6TblSAkOMQ6FrgHRgHilAJA5p9uW93c3vnoqyjARyric+y3hrxaFpzXmwRuEWjsSf3FvoruUtmc+zxZaD2lGJKa0KaMnHa3CIiXJocZHKQyUF1OI05txvj6Mqy3hIvvOkPmN9ZV482PYxniR+5VOTcfPzkjwKExfAAHt7KKLfnDZtsh11oraljpy2G5u2przGc+fFEvegMpUXNRuz1rN5H8aJNcQcCF9iFFZRTVtpz39mkal3STRexePkUsVMI8ocwkoe6Am6UGE2x3R8uT6gikbOIW5zvn2pLuHGJ+xs1yFNohZbIlnqpWOLEWH20efgJXXdG+Irer7aiMOHe+5QIknJxUKGZ122yPpfJdWChsGkBKWiiwPOjWv/j2yZlaFL4yjtqpGJhF19D4JZYfKCghTQcq1XAnm/AQvxBY1g+wqwkMLqOdE6ntLkYkNa3mwGycLjCw3KYie2CyYpivGUVGnurtE7POrkptsGjHsOrDHHjIytglgYSXHs5f2VLG6mpqWEU9jqH851IYrkVZcijBFdpz3tpkrbUwwi603iKFHYZkJpbCrVNLtism7AX1NDupZvdF50VmFAjyqY020WeTJBU3rngyUrs7Inmz458ClTx+9GEnPSgq/zybilEp8v8UN98dPC7Pk0Qwdr6bTLE1bOVa/YE=
+  on: master
+  app: catbook-backend
