@@ -5,6 +5,9 @@ This is a simple social network for the HighLoad course.
 
 Backend in Node.js/Express
 
+URL: **[catbook-backend.herokuapp.com](https://catbook-backend.herokuapp.com/)**
+
+## Developing
 For starting:
 ```
 git clone https://github.com/hydra13/catbook-backend.git
@@ -19,3 +22,6 @@ npm start
 * **PUT /cats/:id** - change cat's record by id
 * **PATCH /cats/:id** - change cat's record by id (same PUT)
 * **DELETE /cats/:id** - delete cat's record by id
+
+## Links
+- [MySQL + Heroku](https://bezkoder.com/deploy-node-js-app-heroku-cleardb-mysql/)
