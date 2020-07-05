@@ -4,7 +4,7 @@ const pool = mysql.createPool({
   host: process.env.DBHOST || 'localhost',
   user: process.env.DBUSER || 'admin',
   password: process.env.DBPASS || 'admin',
-  database: 'catbook',
+  database: process.env.DBNAME || 'catbook',
 });
 
 class Cat {
