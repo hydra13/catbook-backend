@@ -9,3 +9,6 @@ node_js:
 script:
   - npm run lint
   - npm test
+ignore:
+  - *.md
+  - sql/*
