@@ -8,6 +8,7 @@ const prometheus = require('prom-client');
 const cats = require('./routes/cats');
 
 const app = express();
+const { NODE_ENV } = process.env;
 
 const numOfRequests = new prometheus.Counter({
   name: 'numOfRequests',
@@ -15,19 +16,23 @@ const numOfRequests = new prometheus.Counter({
   labelNames: ['method'],
 });
 
-app.use(morgan('combined'));
+if (NODE_ENV !== 'production') {
+  app.use(morgan('combined'));
+}
 
 app.use(cors());
 
 app.use(favicon(path.resolve(__dirname, '..', 'public', 'favicon.ico')));
 
-app.use((req, res, next) => {
-  console.log(req.url);
-  if (req.url !== '/metrics') {
-    numOfRequests.inc({ method: req.method });
-  }
-  next();
-});
+if (NODE_ENV !== 'production') {
+  app.use((req, res, next) => {
+    console.log(req.url);
+    if (req.url !== '/metrics') {
+      numOfRequests.inc({ method: req.method });
+    }
+    next();
+  });
+}
 
 app.use(bodyParser.json());
 
