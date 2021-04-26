@@ -1,6 +1,5 @@
 # CatBook - Backend 
 [![Build Status](https://travis-ci.org/hydra13/catbook-backend.svg?branch=master)](https://travis-ci.org/hydra13/catbook-backend)
-[![Heroku](https://heroku-badge.herokuapp.com/?app=catbook-backend)](https://catbook-backend.herokuapp.com/)
 
 This is a simple social network for the HighLoad course.
 
@@ -13,7 +12,29 @@ For starting:
 ```
 git clone https://github.com/hydra13/catbook-backend.git
 cd catbook-backend
+# before start you should check your db instance is running. See "Database" part.
 npm start
+```
+
+## Database
+In `sql` directory you can find sh-script which will help you to create db's instance on your local machine.
+
+Requirements: `docker >=20.10`
+
+### Init
+```
+cd sql
+sh create-docker-image.sh
+```
+
+### Start db
+```
+docker container start catbookdb
+```
+
+### Stop db
+```
+docker container stop catbookdb
 ```
 
 ## API
